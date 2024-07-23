@@ -3,7 +3,235 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
+
+@font-face {
+  font-family: "TBCXBold"; /* Replace 'MyFont' with your desired font family name */
+  src: url("./TBCXBold.6db5e61d.woff2") format("woff2"); /* Replace 'myfont.woff2' with your font file name */
+}
+
+@font-face {
+  font-family: TBCRegular;
+  src: url("./TBCXRegular.dee156cc.woff2") format("woff2");
+}
+@font-face {
+  font-family: TBCMedium;
+  src: url("./TBCXMedium.8ef1248a.woff2") format("woff2");
+}
+/* General CSS */
+
+/* HTML {
+  -webkit-text-size-adjust: 100%;
+} */
+
+body {
+  color: #555f62;
+  background-color: #f9fafa;
+  font-family: TBCXBold;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.header_container {
+  z-index: 103;
+  width: 100%;
+  height: 100%;
+  max-width: 1110px;
+  grid-column-gap: 32px;
+  justify-content: flex-start;
+  margin-right: auto;
+  position: relative;
+}
+
+.nav_buttons,
+.header_container {
+  align-items: center;
+  margin-left: auto;
+  display: flex;
+}
+.nav_buttons {
+  grid-column-gap: 16px;
+}
+.header {
+  z-index: 100;
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #eef1f1;
+  padding-left: 47px;
+  padding-right: 47px;
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+}
+.logo_button {
+  align-self: center;
+}
+.logo .arrow-link {
+  grid-column-gap: 6px;
+  color: #182cc0;
+  text-transform: uppercase;
+  flex: none;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+  display: flex;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.search_button_header {
+  justify-content: center;
+  align-items: center;
+  transition: color 0.25s;
+  display: flex;
+}
+.arrow_link {
+  grid-column-gap: 6px;
+  color: #182cc0;
+  text-transform: uppercase;
+  flex: none;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+  display: flex;
+  padding-left: 8px;
+}
+.button_icon {
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+  position: relative;
+}
+.button_text {
+  z-index: 2;
+  margin-top: 2px;
+  transition: transform 0.6s ease-out;
+  position: relative;
+}
+
+.inline_block {
+  max-width: 100%;
+}
+
+.mobile_header_menu_icon {
+  /* width: 36px;
+  height: 32px; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px;
+  transition: color 0.25s;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile_header_menu_icon > * {
+  transition: all 0.6s;
+}
+
+.mobile_header_menu_line1 {
+  width: 11px;
+  height: 2px;
+  transform-origin: 100%;
+  background-color: #555f62;
+  border-radius: 1px;
+}
+
+.mobile_header_menu_line2 {
+  width: 20px;
+  height: 2px;
+  background-color: #555f62;
+  border-radius: 1px;
+}
+.mobile_header_menu_line3 {
+  width: 15px;
+  height: 2px;
+  transform-origin: 100%;
+  background-color: #555f62;
+  border-radius: 1px;
+}
+
+.mobile_header_menu_icon.active .mobile_header_menu_line1 {
+  width: 20px;
+  height: 2px;
+  /* transition: 0.6s; */
+  transform: translateY(0px) scaleX(1) rotateX(0deg) rotateY(0deg)
+    rotate(-45deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+.mobile_header_menu_icon.active .mobile_header_menu_line2 {
+  opacity: 0;
+}
+
+.mobile_header_menu_icon.active .mobile_header_menu_line3 {
+  width: 20px;
+  height: 2px;
+  /* transition: 0.6s; */
+  transform: translateY(0px) scaleX(1) rotateX(0deg) rotateY(0deg) rotate(45deg)
+    skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .mobile_logo_link {
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .header_container {
+    grid-column-gap: 24px;
+  }
+
+  .arrow_link {
+    font-size: 12px;
+  }
+  .nav_buttons {
+    grid-column-gap: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile_logo_link {
+    width: 36px;
+    height: 32px;
+    flex: none;
+    fill: #555f62;
+  }
+  .tab_desk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile_logo_link {
+    display: none;
+  }
+  .tab_desk {
+    fill: #555f62;
+  }
 }
