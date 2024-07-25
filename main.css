@@ -595,9 +595,9 @@ body {
   cursor: pointer;
 }
 
-.arrows_box {
+/* .arrows_box {
   display: none;
-}
+} */
 
 .active_arrow {
   color: #182cc0;
