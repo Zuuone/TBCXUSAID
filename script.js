@@ -1,13 +1,23 @@
 const headerContainer = document.querySelector(".header_container");
 const mobileMenuIcon = document.querySelector(".mobile_header_menu_icon");
-
-// variables for scroll bar
+//
 const content = document.querySelector(".offers_slider_container");
 const scrollbar = document.querySelector(".offers_slider_scroolbar");
-const scrollbarDrag = document.querySelector(".offers_scrollbar_drag");
-
+const scrollbarDrag = document.querySelector(".offers_scrollbar_thumb");
 const prevArrow = document.querySelector(".arrow_left");
 const nextArrow = document.querySelector(".arrow_right");
+
+mobileMenuIcon.addEventListener("click", function () {
+  this.classList.toggle("active");
+  headerContainer.setAttribute("style", "background-color: #f9fafa ");
+
+  if (!this.classList.contains("active")) {
+    headerContainer.setAttribute("style", "background-color: #fff ");
+  }
+});
+
+//scrollbar functions
+
 const scrollAmount = 300;
 
 let isDragging = false;
@@ -102,3 +112,6 @@ nextArrow.addEventListener("click", () => {
 content.addEventListener("scroll", updateScrollbar);
 window.addEventListener("resize", updateScrollbar);
 updateScrollbar();
+
+console.log(233);
+console.log(headerContainer);

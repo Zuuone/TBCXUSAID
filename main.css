@@ -4,18 +4,24 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 @font-face {
   font-family: "TBCBold"; /* Replace 'MyFont' with your desired font family name */
-  src: url("./TBCXBold.6db5e61d.woff2") format("woff2"); /* Replace 'myfont.woff2' with your font file name */
+  src: url("./fonts/TBCXBold.6db5e61d.woff2") format("woff2"); /* Replace 'myfont.woff2' with your font file name */
 }
 
 @font-face {
   font-family: "TBCRegular";
-  src: url("./TBCXRegular.dee156cc.woff2") format("woff2");
+  src: url("./fonts/TBCXRegular.dee156cc.woff2") format("woff2");
 }
 @font-face {
   font-family: "TBCMedium";
-  src: url("./TBCXMedium.8ef1248a.woff2") format("woff2");
+  src: url("./fonts/TBCXMedium.8ef1248a.woff2") format("woff2");
 }
 /* General CSS */
 
@@ -32,11 +38,31 @@ body {
   line-height: 1.7;
 }
 
-.general_padding {
+/* .general_padding {
   padding-left: 47px;
   padding-right: 47px;
+} */
+
+b,
+strong {
+  font-weight: 700;
 }
 
+h1 {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 0;
+}
+
+h1,
+h2 {
+  line-height: 1.5;
+}
 .main_page {
   min-height: 100vh;
   display: flex;
@@ -58,6 +84,7 @@ body {
   max-width: 1110px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .nav_buttons,
@@ -100,10 +127,6 @@ body {
   transition: color 0.25s ease-in-out;
   display: flex;
 }
-
-/* .cursor-pointer {
-  cursor: pointer;
-} */
 
 .search_button_header {
   justify-content: center;
@@ -240,8 +263,7 @@ body {
   max-width: 1100px;
 }
 
-.section_hero::before {
-  content: "";
+.section_hero_top {
   position: absolute;
   top: 0;
   left: 0;
@@ -293,6 +315,18 @@ body {
   background-image: linear-gradient(15deg, #001682, #3240e5);
   border-radius: 4px;
   height: 50px;
+  z-index: -1;
+  transition: 0.25s ease-in-out; /* Apply transition to background-image and background-color */
+}
+
+.section_hero_button:hover {
+  cursor: pointer;
+
+  background-color: #3295ce;
+  opacity: 0.25s ease-in-out;
+
+  /* transition: opacity 0.25s ease-in-out; */
+  background-image: none;
 }
 
 /* .subscribe {
@@ -426,6 +460,9 @@ body {
 }
 
 .offers_slider_container {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
   display: flex;
   flex-direction: row;
   margin-left: auto;
@@ -557,19 +594,26 @@ body {
   transition: all 0.25s ease-in-out;
 }
 
-.offer_card_content {
+/* .offer_card_content {
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+} */
+
+.offers_slide {
   transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
-.offer_card:hover .offer_card_content {
-  background-color: #fff;
+/* .offers_slide:hover {
+} */
+.offers_slide:hover {
+  /* background-color: #fff; */
+  background-color: white;
 
   transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
-  box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
+  box-shadow: 0 36px 40px -15px rgba(75, 108, 133, 0.07);
 }
-.offers_slider_container::-webkit-scrollbar {
+/* .offers_slider_container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .offers_slider_scroolbar {
   height: 2px;
@@ -582,7 +626,7 @@ body {
   right: 0; */
 }
 
-.offers_scrollbar_drag {
+.offers_scrollbar_thumb {
   /* transform: translate3d(0px, 0px, 0px); */
   width: 137px;
   background: #182cc0;
@@ -595,23 +639,502 @@ body {
   cursor: pointer;
 }
 
-/* .arrows_box {
+.arrows_box {
   display: none;
-} */
+}
 
 .active_arrow {
   color: #182cc0;
 }
 
-@media screen and (max-width: 1440px) {
+.digital_banking_section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #fff;
+}
+
+.digital_banking_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 55%;
+  grid-row-gap: 16px;
+  padding: 32px 0;
+}
+
+.offers_slider_container.active {
+  cursor: grabbing;
+  /* cursor: -moz-grabbing;
+  cursor: -webkit-grabbing; */
+}
+
+.digital_banking_section {
+  padding: 36px 0;
+}
+
+.digital_banking_heading {
+  font-size: 14px;
+  color: #141719;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.digital_banking_img {
+  height: auto;
+  display: inline-block;
+  object-fit: contain;
+  object-position: 100% 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  width: 370px;
+  aspect-ratio: auto 370/350;
+}
+
+.digital_banking_content p {
+  color: #555f62;
+  font-family: TBCRegular;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.digital_banking_button {
+  background-color: #f9fafa;
+  width: 100%;
+  display: flex;
+  grid-column-gap: 4px;
+  color: #182cc0;
+  text-transform: uppercase;
+  border: 1px solid #182cc0;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+  text-decoration: none;
+  transition: background-position 0.25s ease-in-out;
+}
+
+.digital_banking_button p {
+  z-index: 2;
+  margin-top: 2px;
+  transition: transform 0.6s ease-out;
+  position: relative;
+  color: #182cc0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.general_box {
+  padding: 36px 0;
+}
+
+.general_box_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.product_slider_container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* overflow: hidden; */
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  padding-bottom: 38px;
+  /* overflow: auto; */
+}
+
+.scroll_element {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+  padding-bottom: 38px;
+  transform: translate3d(0px, 0px, 0px);
+  overflow: auto;
+}
+
+.general_box_heading h2 {
+  color: #141719;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.box_slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  /* overflow: auto; */
+}
+
+.box_card {
+  width: 100%;
+  /* width: 100%; */
+  height: 100%;
+  border: 1px solid #e1e4e5;
+  border-radius: 8px;
+  flex-direction: column;
+  font-size: 14px;
+  text-decoration: none;
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  display: flex;
+  cursor: pointer;
+}
+.box_card_poster {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 102%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 0.25s ease-in-out;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 60%;
+  position: relative;
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  /* background-blend-mode: overlay; */
+  overflow: hidden;
+}
+
+.poster1 {
+  background-image: url(https://static.tbcconcept.ge/mobile/media/mfvvitla.0j5430128849_7213815365374065_9017687812435872577_n.png);
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.poster2 {
+  background-image: url(https://static.tbcconcept.ge/mobile/media/0m25n3qt.w03prem.png);
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.poster3 {
+  background-image: url(https://static.tbcconcept.ge/mobile/media/nqeaa1rb.avl360.png);
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.box_card_content {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+}
+
+.box_card_text {
+  /* line-clamp: 4; */
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.box_card_text {
+  font-family: TBCRegular;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.hero_below_box {
+  /* margin-left: -15px;
+  margin-right: -15px; */
+  min-height: 360px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102%;
+  background: rgba(0, 0, 1, 0.3);
+  background-blend-mode: overlay;
+  background-size: cover;
+  /* transform: scale(1); */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: all 0.25s ease-in-out;
+  clip-path: inset(0 0 8px 0);
+  background-image: url(https://static.tbcconcept.ge/mobile/media/nvmgsymp.3xqprivate%20banker.png);
+}
+
+.award_card {
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  flex-direction: column;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  display: flex;
+}
+
+.award_card_content {
+  grid-row-gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  display: flex;
+}
+
+.award_card_logo_general {
+  height: 52px;
+  width: auto;
+  align-items: center;
+  display: flex;
+}
+
+.award_logo {
+  max-height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: 0 50%;
+  object-position: 0 50%;
+}
+.footer {
+  padding-top: 60px;
+}
+.footer_top {
+  background-color: #fff;
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+.footer_logo {
+  width: 36px;
+  height: 32px;
+  flex: none;
+  fill: #141719;
+}
+
+.footer_top_content {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.lang_option {
+  z-index: 5;
+  position: relative;
+}
+
+.lang_toggle {
+  height: 36px;
+  grid-column-gap: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: 700;
+  transition: background-color 0.25s ease-in-out;
+  display: flex;
+}
+
+.lang_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_main {
+  background-color: #fff;
+  padding-bottom: 45px;
+}
+
+.footer_main_content {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+.footer_dropdown_toggle {
+  color: #141719;
+  padding-bottom: 24px;
+  font-weight: 700;
+}
+
+.footer_dropdown_toggle_link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer_dropdown-arrow {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: 0.6s;
+}
+.footer_dropdown-list {
+  grid-row-gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+}
+
+.footer_dropdown-link {
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+.footer_bottom_content {
+  grid-column-gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.contact_heading {
+  color: #141719;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer_contact_list {
+  grid-row-gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-style: normal;
+  display: flex;
+}
+
+.footer_contact-item {
+  grid-column-gap: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+}
+
+.icon {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #555f62;
+}
+
+.footer_contact-item p {
+  font-size: 14px;
+  color: #555f62;
+  font-family: TBCMedium;
+}
+
+.footer_social-list {
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.footer_social-link {
+  width: 40px;
+  height: 40px;
+  background-color: #f9fafa;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  display: flex;
+}
+
+.footer_bottom {
+  background-color: #fff;
+  border-top: 1px solid #eef1f1;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  font-size: 12px;
+}
+
+.footer_bottom_content {
+  grid-column-gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.footer_bottom_logo_box {
+  grid-column-gap: 8px;
+  align-items: center;
+  display: flex;
+}
+
+.footer_bottom_logo {
+  width: 21px;
+  align-items: center;
+  display: flex;
+}
+
+.footer_bottom_logo_box p {
+  font-size: 14px;
+  font-family: TBCRegular;
+}
+
+.footer_bottom_links {
+  grid-column-gap: 35px;
+  grid-row-gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+}
+
+.footer_bottom-link {
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+@media screen and (max-width: 1439px) {
   .offers_slider_scroolbar {
     max-width: 1100px;
   }
+  .product_slider_container {
+    overflow: visible;
+  }
 }
-
 @media screen and (min-width: 1440px) {
   /* .offers_slider_container {
     overflow: visible;
+  } */
+  .offers_slide {
+    margin-right: 30px;
+  }
+
+  .offer_card {
+    width: 350px;
+    height: 391.58px;
+  }
+
+  .offer_section_button_text {
+    margin-right: 5px;
+  }
+  /* .button_text {
+    margin-right: 20px;
   } */
   .offers_slider_scroolbar {
     max-width: 950px;
@@ -667,8 +1190,23 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-}
 
+  .digital_banking_section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  .lang_toggle {
+    height: 40px;
+    background-color: #f9fafa;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
 @media screen and (max-width: 767px) {
   /* h3 {
     font-size: 16px;
@@ -729,8 +1267,156 @@ body {
   .card_title {
     font-size: 14px;
   }
-}
 
+  .digital_banking_section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .digital_banking_content {
+    width: 100%;
+    grid-row-gap: 28px;
+  }
+
+  digital_banking_img {
+    position: static;
+  }
+  .digital_banking_button {
+    flex: 1;
+  }
+  .general_box_heading {
+    margin-bottom: 28px;
+  }
+  .product_slider_container {
+    padding-bottom: 28px;
+  }
+
+  .scroll_element {
+    padding-bottom: 28px;
+  }
+
+  .box_card_content {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .box_card {
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .box_card_poster {
+    padding-top: 42%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .award_card {
+    border-style: none;
+    border-radius: 6px;
+  }
+
+  .award_card_content {
+    grid-row-gap: 16px;
+  }
+
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer_top {
+    border-bottom: 1px solid #d1d5d6;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .footer_main {
+    padding-bottom: 0;
+  }
+
+  .footer_main_content {
+    grid-row-gap: 0;
+    flex-direction: column;
+    margin-left: -15px;
+    margin-right: -15px;
+    display: flex;
+  }
+
+  .footer_dropdown {
+    border-bottom: 1px solid #d1d5d6;
+  }
+
+  .footer_dropdown_toggle {
+    grid-column-gap: 36px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 45px;
+    font-size: 24px;
+    line-height: 1.5;
+    display: flex;
+  }
+
+  .footer_dropdown-list {
+    grid-row-gap: 24px;
+    padding-bottom: 36px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .footer_dropdown-link {
+    font-size: 16px;
+  }
+
+  .footer_bottom_content {
+    grid-row-gap: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer_main_item.contact_info {
+    padding: 56px 45px;
+  }
+
+  .contact_heading {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  .footer_contact_list {
+    grid-row-gap: 32px;
+  }
+
+  .footer_social-list {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  .footer_social-link {
+    width: 52px;
+    height: 52px;
+  }
+
+  .footer_bottom {
+    background-color: #f9fafa;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+  }
+
+  .footer_bottom_content {
+    grid-row-gap: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer_bottom_logo_box {
+    color: #6f787b;
+  }
+
+  .footer_bottom_links {
+    grid-column-gap: 30px;
+    order: -1;
+  }
+}
 @media screen and (max-width: 479px) {
   .general_padding {
     padding-left: 15px;
@@ -834,12 +1520,86 @@ body {
   }
   .offer_card {
     width: 77vw;
+    /* max-width: ; */
   }
 
   .offer_card_poster {
     background-repeat: no-repeat;
     padding-top: 57%;
     /* background-size: cover; */
+  }
+
+  .digital_banking_section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .digital_banking_content {
+    grid-row-gap: 24px;
+  }
+  .scroll_element {
+    padding-bottom: 20px;
+  }
+
+  .box_slide {
+    width: 341.142px;
+    margin-right: 15px;
+  }
+
+  .box_card_poster {
+    padding-top: 57%;
+  }
+
+  .general_box_heading h2 {
+    font-size: 14px;
+  }
+  .footer_dropdown_toggle {
+    padding: 24px 15px;
+    font-size: 16px;
+  }
+
+  .footer_dropdown-arrow {
+    width: 24px;
+  }
+
+  .footer_dropdown-list {
+    grid-row-gap: 16px;
+    padding-bottom: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer_dropdown-link {
+    font-size: 14px;
+  }
+
+  .footer_bottom_content {
+    grid-row-gap: 24px;
+  }
+
+  .footer_main_item.contact_info {
+    padding: 32px 15px;
+  }
+
+  .contact_heading {
+    font-size: 16px;
+  }
+
+  .footer_contact_list {
+    margin-bottom: 48px;
+  }
+
+  .footer_bottom {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .footer_bottom_content {
+    grid-row-gap: 24px;
+  }
+
+  .footer_bottom-link {
+    font-family: TBCRegular;
   }
 }
 
