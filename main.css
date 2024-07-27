@@ -1109,6 +1109,36 @@ h2 {
   transition: color 0.25s ease-in-out;
 }
 
+.button_menu {
+  z-index: 90;
+  grid-row-gap: 12px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+
+.button_menu_trigger {
+  width: 56px;
+  height: 56px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #424a4d;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: background-color 0.25s ease-in-out;
+  display: flex;
+}
+
+.button_menu_trigger.icon {
+  color: #001682;
+}
+
 @media screen and (max-width: 1439px) {
   .offers_slider_scroolbar {
     max-width: 1100px;
@@ -1172,6 +1202,9 @@ h2 {
     margin-top: 8px;
   }
 
+  .section_hero_content {
+    padding: 240px 45px 36px;
+  }
   .grid_cards {
     min-height: 232px;
   }
@@ -1206,7 +1239,13 @@ h2 {
     padding-left: 12px;
     padding-right: 12px;
   }
+
+  .button_menu {
+    bottom: 24px;
+    right: 24px;
+  }
 }
+
 @media screen and (max-width: 767px) {
   /* h3 {
     font-size: 16px;
@@ -1443,6 +1482,9 @@ h2 {
   margin-right: -5px; */
     /* padding-bottom: 36px; */
     margin-bottom: 36px;
+  }
+
+  .section_hero_top {
   }
   .section_hero_content {
     padding: 172px 15px 20px;
