@@ -1,0 +1,253 @@
+@media screen and (max-width: 599px) {
+  .offers_slide {
+    min-width: 68vw;
+    max-height: 290px;
+  }
+
+  .box_slide {
+    width: 66vw;
+    max-height: 340px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .general_padding {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .header_container {
+    grid-column-gap: 24px;
+  }
+
+  .arrow_link {
+    font-size: 12px;
+  }
+  .nav_buttons {
+    grid-column-gap: 8px;
+  }
+
+  .breadcrumb_arrow {
+    display: block;
+  }
+  .breadcrumb {
+    padding: 96px 15px 16px 15px;
+  }
+
+  .section_hero {
+    height: 360px;
+    margin-bottom: 36px;
+  }
+
+  .section_hero_top {
+    height: 102%;
+    transform: scale(1.0005);
+    margin-top: 0;
+  }
+  .section_hero_content {
+    padding: 172px 15px 20px;
+  }
+  .section_hero_content h1 {
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .main_message_container {
+    padding: 36px 15px;
+  }
+
+  .main_message_text {
+    font-size: 24px;
+  }
+
+  .main_message_text {
+    padding: 0;
+  }
+
+  .concept_options {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .concept_options_grid {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .data_section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .data {
+    grid-row-gap: 16px;
+    padding: 0;
+  }
+
+  .data_item {
+    padding: 24px;
+    font-size: 14px;
+  }
+
+  .number {
+    font-size: 36px;
+  }
+  .offers_section {
+    padding: 36px 0 36px 15px;
+  }
+  .offers_section_heading {
+    margin-bottom: 20px;
+  }
+
+  .offers_section_heading h2 {
+    font-size: 14px;
+  }
+
+  .offers_slider_container {
+    padding-bottom: 20px;
+  }
+  .offers_slide {
+    min-width: 76vw;
+    max-height: 346px;
+  }
+  .offer_card {
+    width: 77vw;
+  }
+
+  .offer_card_poster {
+    background-repeat: no-repeat;
+    padding-top: 57%;
+  }
+
+  .digital_banking_section {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 15px;
+  }
+
+  .digital_banking_content {
+    padding: 32px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-row-gap: 24px;
+  }
+
+  .digital_banking_heading {
+    font-size: 14px;
+  }
+
+  .scroll_element {
+    padding-bottom: 20px;
+    padding-left: 0;
+  }
+
+  .general_box {
+    padding-left: 15px;
+  }
+  .general_box_heading {
+    padding-left: 0;
+  }
+  .box_slide {
+    width: 341.142px;
+  }
+
+  .box_card_poster {
+    padding-top: 57%;
+  }
+
+  .general_box_heading h2 {
+    font-size: 14px;
+  }
+
+  .footer_main {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer_dropdown_toggle {
+    padding: 24px 15px;
+    font-size: 16px;
+  }
+
+  .footer_dropdown-arrow {
+    width: 24px;
+  }
+
+  .footer_dropdown-list {
+    grid-row-gap: 16px;
+    padding-bottom: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer_dropdown-link {
+    font-size: 14px;
+  }
+
+  .footer_top {
+    padding-left: 0;
+  }
+
+  .footer_top_content {
+    padding-left: 0;
+  }
+
+  .footer_main {
+    padding-left: 0;
+  }
+
+  .footer_bottom {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer_bottom_content {
+    grid-row-gap: 24px;
+  }
+
+  .footer_main_item.contact_info {
+    padding: 32px 15px;
+  }
+
+  .contact_heading {
+    font-size: 16px;
+  }
+
+  .footer_contact_list {
+    margin-bottom: 48px;
+  }
+
+  .footer_bottom {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .gen .footer_bottom_content {
+    grid-row-gap: 24px;
+  }
+
+  .footer_bottom-link {
+    font-family: TBCRegular;
+  }
+
+  .button_menu {
+    grid-row-gap: 8px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .button_menu_trigger {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section_hero {
+    width: auto;
+    height: auto;
+  }
+}
