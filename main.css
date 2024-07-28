@@ -845,7 +845,7 @@ h2 {
 }
 
 .box_card_text {
-  /* line-clamp: 4; */
+  line-clamp: 4;
   -webkit-line-clamp: 4;
   overflow: hidden;
   display: -webkit-box;
@@ -1484,8 +1484,8 @@ h2 {
     margin-bottom: 36px;
   }
 
-  .section_hero_top {
-  }
+  /* .section_hero_top {
+  } */
   .section_hero_content {
     padding: 172px 15px 20px;
   }
